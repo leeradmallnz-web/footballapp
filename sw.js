@@ -1,8 +1,8 @@
 const CACHE = 'matchday-v1';
 const ASSETS = [
-  '/football-manager/',
-  '/football-manager/index.html',
-  '/football-manager/manifest.json',
+  '/footballapp/',
+  '/footballapp/index.html',
+  '/footballapp/manifest.json',
   'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap'
 ];
 
@@ -22,6 +22,6 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then(cached => cached || fetch(e.request).catch(() => caches.match('/football-manager/index.html')))
+    caches.match(e.request).then(cached => cached || fetch(e.request).catch(() => caches.match('/footballapp/index.html')))
   );
 });
